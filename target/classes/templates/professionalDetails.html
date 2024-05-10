@@ -1,0 +1,29 @@
+<!-- professional-details.html -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Professional Details Form</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Professional Details Form</h1>
+        <form th:object="${professionalDetails}" th:action="@{/save}" method="post">
+            <div class="form-group">
+                <label for="employeeId">Employee ID</label>
+               <input type="hidden" th:field="*{employeeId}" />
+            </div>
+            <div class="form-group">
+                <label for="jobRole">Job Role</label>
+                <input type="text" th:field="*{jobRole}" class="form-control" id="jobRole" placeholder="Enter Job Role">
+            </div>
+            <div class="form-group">
+                <label for="mail">Email</label>
+                <input type="email" th:field="*{mail}" class="form-control" id="mail" placeholder="Enter Email">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
